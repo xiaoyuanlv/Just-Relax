@@ -1,0 +1,129 @@
+@import url('https://fonts.googleapis.com/css2?family=Uchen&display=swap');
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: linear-gradient(90deg, #4c9e92, #42a39d, #36a7aa, #28abb7, #19afc4, #09b2d1, #0ab5de, #1eb8eb);
+    color: #fff;
+    font-family: 'Uchen', sans-serif;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 0;
+}
+
+.bg-grow {
+    background: linear-gradient(90deg, #4c9e92, #42a39d, #36a7aa, #28abb7, #19afc4, #09b2d1, #0ab5de, #1eb8eb);
+}
+
+.bg-hold {
+    background: linear-gradient(90deg, #16469e, #184ba9, #1b51b3, #1e56be, #205bc9, #2361d4, #2566e0, #286ceb);
+}
+
+.bg-shrink {
+    background: linear-gradient(90deg, #0e9e7a, #06a889, #00b399, #00bda9, #00c8b9, #00d2ca, #0eddda, #1ee7eb);
+}
+
+
+
+.container {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+    height: 230px;
+    width: 230px;
+    margin: auto;
+    position: relative;
+    transform: scale(1);
+    text-align: center;
+}
+
+.container #text {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+   
+    color: #8bccf1;
+}
+
+.gradient-circle {
+    background: conic-gradient(#85cdf7 0%, #4794ec 40%, rgb(84, 110, 182) 40%, rgb(108, 97, 207) 60%, #163e88 60%, #1f5b77 100%);
+    height: 250px;
+    width: 250px;
+    top: -10px;
+    left: -10px;
+    position: absolute;
+    z-index: -2;
+    border-radius: 50%;
+}
+
+.circle {
+    background-color: #010f1c;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    border-radius: 50%;
+}
+
+.pointer-container {
+    position: absolute;
+    top: -40px;
+    left: 105px;
+    width: 20px;
+    height: 150px;
+    animation: rotate 7.5s linear forwards infinite;
+    transform-origin: bottom center;
+}
+
+.container.grow {
+    animation: grow 3s linear forwards;
+}
+
+.container.shrink {
+    animation: shrink 3s linear forwards;
+}
+
+.pointer {
+    background-color: #fff;
+    border-radius: 50%;
+    height: 20px;
+    width: 20px;
+    display: block;
+}
+
+@keyframes rotate {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes grow {
+    from {
+        transform: scale(1);
+    }
+
+    to {
+        transform: scale(1.2);
+    }
+}
+
+@keyframes shrink {
+    from {
+        transform: scale(1.2);
+    }
+
+    to {
+        transform: scale(1);
+    }
+}
